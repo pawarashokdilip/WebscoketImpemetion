@@ -1,0 +1,140 @@
+WebSocket ‚Äì Definition & Explanation
+1. What is WebSocket?
+
+WebSocket is a full-duplex communication protocol that allows real-time, two-way communication between a client (browser) and a server over a single persistent connection.
+
+Unlike HTTP, WebSocket does not require the client to send a request every time to receive data.
+
+2. Why WebSocket is needed?
+
+Traditional HTTP works on a request‚Äìresponse model:
+
+Client sends request
+
+Server sends response
+
+Connection closes
+
+This is slow and inefficient for real-time applications.
+
+WebSocket solves this problem by:
+
+Keeping the connection open
+
+Allowing server to push data instantly
+
+Reducing network overhead
+
+3. Key Features of WebSocket
+
+Ì¥Ñ Full-duplex communication
+
+Ì¥ó Single persistent connection
+
+‚ö° Low latency
+
+Ì≥° Real-time data transfer
+
+Ìºê Works over TCP
+
+Ì¥í Supports secure connection (wss://)
+
+4. WebSocket vs HTTP
+Feature	HTTP	WebSocket
+Communication	One-way	Two-way
+Connection	Closed after response	Persistent
+Latency	High	Very Low
+Real-time	‚ùå No	‚úÖ Yes
+Server push	‚ùå No	‚úÖ Yes
+5. How WebSocket Works (Flow)
+
+Client sends HTTP handshake request
+
+Server upgrades protocol to WebSocket
+
+Connection remains open
+
+Client and server can send messages anytime
+
+Connection closes only when explicitly closed
+
+6. WebSocket URL Types
+
+ws:// ‚Üí Non-secure WebSocket
+
+wss:// ‚Üí Secure WebSocket (recommended)
+
+7. Where WebSocket is used?
+
+WebSocket is used in real-time applications, such as:
+
+Ì≤¨ Chat applications
+
+Ì≥à Stock market live updates
+
+ÌæÆ Online multiplayer games
+
+Ì≥ç Live tracking systems
+
+Ì¥î Notifications systems
+
+Ì¥ù Collaborative tools
+
+8. WebSocket in Spring Boot
+
+Spring Boot provides WebSocket support using:
+
+@EnableWebSocketMessageBroker
+
+STOMP protocol
+
+SockJS (fallback support)
+
+Common Components:
+
+WebSocket Configuration class
+
+Controller with @MessageMapping
+
+Message Broker (/topic)
+
+Client using SockJS + STOMP
+
+9. STOMP Protocol
+
+STOMP (Simple Text Oriented Messaging Protocol) is used on top of WebSocket to:
+
+Define message destinations
+
+Simplify message handling
+
+Support publish/subscribe model
+
+Example:
+
+/app/chat.send ‚Üí client sends message
+
+/topic/public ‚Üí server broadcasts message
+
+10. Advantages of WebSocket
+
+Faster communication
+
+Real-time updates
+
+Less bandwidth usage
+
+Better user experience
+
+11. Disadvantages of WebSocket
+
+More complex than HTTP
+
+Requires connection management
+
+Not ideal for simple request-response APIs
+
+12. Conclusion
+
+WebSocket is the best choice for real-time communication in modern applications.
+It provides low-latency, bidirectional communication, making it ideal for chat apps, live dashboards, and streaming data.
