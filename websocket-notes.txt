@@ -1,0 +1,173 @@
+WebSocket – Definition & Explanation
+
+
+
+1. What is WebSocket?
+
+WebSocket is a full-duplex communication protocol that allows real-time,
+
+two-way communication between a client (browser) and a server over a single
+
+persistent connection.
+
+
+
+Unlike HTTP, WebSocket does not require the client to send a request every
+
+time to receive data.
+
+
+
+2. Why WebSocket is needed?
+
+Traditional HTTP works on a request–response model:
+
+- Client sends request
+
+- Server sends response
+
+- Connection closes
+
+
+
+This is slow and inefficient for real-time applications.
+
+
+
+WebSocket solves this problem by:
+
+- Keeping the connection open
+
+- Allowing server to push data instantly
+
+- Reducing network overhead
+
+
+
+3. Key Features of WebSocket
+
+- Full-duplex communication
+
+- Single persistent connection
+
+- Low latency
+
+- Real-time data transfer
+
+- Works over TCP
+
+- Supports secure connection (wss://)
+
+
+
+4. WebSocket vs HTTP
+
+HTTP: One-way, high latency, no real-time
+
+WebSocket: Two-way, low latency, real-time
+
+
+
+5. How WebSocket Works
+
+- Client sends HTTP handshake request
+
+- Server upgrades protocol to WebSocket
+
+- Connection remains open
+
+- Client and server can send messages anytime
+
+- Connection closes explicitly
+
+
+
+6. WebSocket URL Types
+
+ws://  -> Non-secure WebSocket
+
+wss:// -> Secure WebSocket
+
+
+
+7. Where WebSocket is used?
+
+- Chat applications
+
+- Stock market updates
+
+- Online multiplayer games
+
+- Live tracking systems
+
+- Notifications
+
+- Collaborative tools
+
+
+
+8. WebSocket in Spring Boot
+
+- @EnableWebSocketMessageBroker
+
+- STOMP protocol
+
+- SockJS support
+
+
+
+Components:
+
+- WebSocket config
+
+- Controller with @MessageMapping
+
+- Message broker (/topic)
+
+- Client using SockJS + STOMP
+
+
+
+9. STOMP Protocol
+
+STOMP is used on top of WebSocket to support publish/subscribe messaging.
+
+
+
+Examples:
+
+- /app/chat.send
+
+- /topic/public
+
+
+
+10. Advantages
+
+- Faster communication
+
+- Real-time updates
+
+- Less bandwidth usage
+
+- Better user experience
+
+
+
+11. Disadvantages
+
+- More complex than HTTP
+
+- Needs connection management
+
+- Not suitable for simple APIs
+
+
+
+12. Conclusion
+
+WebSocket is ideal for real-time communication such as chat applications,
+
+live dashboards, and streaming data.
+
+
